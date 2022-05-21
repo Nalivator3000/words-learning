@@ -1,4 +1,3 @@
-import pickle
 import random
 import sqlite3
 from sqlite3 import Error
@@ -45,22 +44,6 @@ def show_dict(connection):
     except Error as e:
         print(f"The error '{e}' occurred")
     return choice_mode()
-
-
-#Переписать нормально
-"""def get_max_id(connection):
-    cursor = connection.cursor()
-    max_id = str("SELECT id FROM words ORDER BY id DESC LIMIT 1")
-    try:
-        cursor.execute(max_id)
-        result = cursor.fetchall()
-        result = str(result[0])
-        result = result[1]
-        result = int(result)
-        connection.commit()
-    except Error as e:
-        print(f"The error '{e}' occurred")
-    return result"""
 
 
 def eng_to_rus(connection):
@@ -163,5 +146,3 @@ def delete_word(connection):
 
 
 choice_mode()
-
-#Сделать удаление пар слов из словаря через ввод ключа ИЛИ значения
